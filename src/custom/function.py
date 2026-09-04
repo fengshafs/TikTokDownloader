@@ -56,7 +56,7 @@ async def suspend(count: int, console: "ColorfulConsole") -> None:
     说明: 此处的一个数据代表一个账号或者一个合集，并非代表一个数据包
     """
     # 启用该函数
-    batches = 20  # 根据实际需求修改
+    batches = 30  # 根据实际需求修改
     if not count % batches:
         rest_time = 20 * 5  # 根据实际需求修改
         console.print(

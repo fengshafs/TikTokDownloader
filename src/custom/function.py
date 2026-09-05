@@ -10,8 +10,8 @@ if TYPE_CHECKING:
 
 
 def get_wait_time(
-    avg_delay: float | int = 6.0,
-    sigma: float = 0.6,
+    avg_delay: float | int = 2.0,
+    sigma: float = 0.5,
 ) -> float:
     mu = log(avg_delay) - (sigma**2 / 2)
     return max(0.5, lognormvariate(mu, sigma))

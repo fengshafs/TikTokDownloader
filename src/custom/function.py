@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 
 def get_wait_time(
-    avg_delay: float | int = 6.0,
+    avg_delay: float | int = 3.0,
     sigma: float = 0.5,
 ) -> float:
     mu = log(avg_delay) - (sigma**2 / 2)
@@ -62,9 +62,9 @@ async def suspend(count: int, console: "ColorfulConsole") -> None:
     说明: 此处的一个数据代表一个账号或者一个合集，并非代表一个数据包
     """
     # 启用该函数
-    batches = 10  # 根据实际需求修改
+    batches = 50  # 根据实际需求修改
     if not count % batches:
-        rest_time = 60 * 5  # 根据实际需求修改
+        rest_time = 20 * 5  # 根据实际需求修改
         console.print(
             _(
                 "程序连续处理了 {batches} 个数据，为了避免请求频率过高导致账号或 IP 被风控，"
